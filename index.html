@@ -1,18 +1,16 @@
 <html>
- <head>
-  <title>
-   Massage Therapy
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
-  <style>
-   :root {
-            --vanilla: #E4D5A3ff;
-            --black: #000000ff;
-            --sunglow: #FDCB31ff;
-            --jet: #333333ff;
-            --sandy-brown: #F8AE6Cff;
-            --lemon-chiffon: #FEF7D0ff;
+<head>
+    <title>Massage Therapy</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        :root {
+            --vanilla: #E4D5A3;
+            --black: #000000;
+            --sunglow: #FDCB31;
+            --jet: #333333;
+            --sandy-brown: #F8AE6C;
+            --lemon-chiffon: #FEF7D0;
         }
 
         body {
@@ -20,15 +18,18 @@
             font-family: 'Roboto', sans-serif;
             background-color: var(--lemon-chiffon);
         }
+
         .header {
             background-color: var(--jet);
             color: var(--lemon-chiffon);
             text-align: center;
             padding: 20px;
         }
+
         .header h1 {
             margin: 0;
         }
+
         .hero {
             background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20231106/pngtree-wooden-texture-complementing-spa-objects-image_13789086.png');
             background-size: cover;
@@ -37,14 +38,17 @@
             text-align: center;
             padding: 100px 20px;
         }
+
         .hero h2 {
             font-size: 48px;
             margin: 0;
         }
+
         .hero p {
             font-size: 24px;
             margin: 20px 0;
         }
+
         .hero .btn {
             background-color: var(--sunglow);
             color: var(--jet);
@@ -52,90 +56,94 @@
             text-decoration: none;
             border-radius: 25px;
             font-size: 18px;
+            transition: background-color 0.3s ease;
         }
+
+        .hero .btn:hover {
+            background-color: #e0b82d;
+        }
+
         .about {
             background-color: var(--vanilla);
             color: var(--jet);
             text-align: center;
             padding: 50px 20px;
         }
+
         .about h2 {
             font-size: 36px;
             margin: 0 0 20px;
         }
+
         .about p {
             font-size: 18px;
             margin: 0;
         }
+
         .services {
             background-color: var(--jet);
             color: var(--lemon-chiffon);
             text-align: center;
             padding: 50px 20px;
         }
+
         .services h2 {
             font-size: 36px;
             margin: 0 0 20px;
         }
+
         .service-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center;
         }
+
         .service-item {
             background-color: var(--sandy-brown);
             margin: 10px;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
-            flex: 1 1 calc(50% - 20px); /* Adjusts to fit 2 items per row */
+            width: 300px;
             box-sizing: border-box;
+            transition: transform 0.3s ease;
         }
+
+        .service-item:hover {
+            transform: scale(1.05);
+        }
+
         .service-item img {
             width: 100%;
             height: auto;
             border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .service-item img:hover {
-            transform: scale(1.05);
-        }
-
-        .fade-in {
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .visible {
-            opacity: 1; /* Menjadi terlihat setelah kelas visible ditambahkan */
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
         }
 
         .service-item h3 {
             font-size: 24px;
             margin: 10px 0;
         }
+
         .service-item p {
             font-size: 16px;
             margin: 10px 0;
         }
+
         .service-item .service-details {
             margin: 20px 0;
         }
+
         .service-item .service-details ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
+
         .service-item .service-details ul li {
             font-weight: bold;
             margin: 10px 0;
         }
+
         .service-item .btn {
             background-color: var(--sunglow);
             color: var(--jet);
@@ -144,89 +152,141 @@
             border-radius: 25px;
             font-size: 18px;
             margin-top: 20px;
+            transition: background-color 0.3s ease;
         }
+
+        .service-item .btn:hover {
+            background-color: #e0b82d;
+        }
+
         .testimonials {
             background-color: var(--lemon-chiffon);
             color: var(--jet);
             text-align: center;
             padding: 50px 20px;
+            position: relative;
         }
+
         .testimonials h2 {
             font-size: 36px;
             margin: 0 0 20px;
         }
+
         .testimonial-item {
+            background-color: var(--vanilla);
+            border: 1px solid var(--jet);
+            border-radius: 10px;
+            padding: 20px;
             margin: 20px 0;
+            display: none;
+            width: 80%;
+            box-sizing: border-box;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
+
+        .testimonial-item.active {
+            display: block;
+        }
+
         .testimonial-item p {
             font-size: 18px;
             margin: 0 0 10px;
         }
+
         .testimonial-item .author {
             font-size: 16px;
             font-weight: bold;
         }
+
         .contact {
             background-color: var(--vanilla);
             color: var(--jet);
             text-align: center;
             padding: 50px 20px;
+            margin-top: 120px; /* Add margin to separate from testimonials */
         }
+
         .contact h2 {
             font-size: 36px;
             margin: 0 0 20px;
         }
+
         .contact p {
             font-size: 18px;
             margin: 0 0 20px;
         }
+
+        .contact .contact-box {
+            background-color: var(--lemon-chiffon);
+            border: 1px solid var(--jet);
+            border-radius: 10px;
+            padding: 20px;
+            display: inline-block;
+            width: 80%;
+            box-sizing: border-box;
+        }
+
         .contact .map {
             width: 100%;
             height: 300px;
             background-color: var(--jet);
+            margin-top: 20px;
         }
+
         .footer {
             background-color: var(--jet);
-            color: var (--lemon-chiffon);
+            color: var(--lemon-chiffon);
             text-align: center;
             padding: 20px;
         }
+
         .footer p {
             margin: 0;
         }
+
         .gallery {
             background-color: var(--lemon-chiffon);
             color: var(--jet);
             text-align: center;
             padding: 50px 20px;
         }
+
         .gallery h2 {
             font-size: 36px;
             margin: 0 0 20px;
         }
+
         .gallery-item {
             display: inline-block;
             margin: 10px;
         }
+
         .gallery-item img {
             width: 300px;
             height: 200px;
             border-radius: 10px;
         }
+
         .testimonial-form {
             background-color: var(--lemon-chiffon);
             color: var(--jet);
             text-align: center;
             padding: 50px 20px;
+            margin-top: 120px; /* Add margin to separate from testimonials */
         }
+
         .testimonial-form h2 {
             font-size: 36px;
             margin: 0 0 20px;
         }
+
         .testimonial-form form {
             max-width: 600px;
             margin: 0 auto;
         }
+
         .testimonial-form input, .testimonial-form textarea {
             width: 100%;
             padding: 10px;
@@ -234,6 +294,7 @@
             border: 1px solid var(--jet);
             border-radius: 5px;
         }
+
         .testimonial-form button {
             background-color: var(--sunglow);
             color: var(--jet);
@@ -242,263 +303,180 @@
             border-radius: 25px;
             font-size: 18px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
+
+        .testimonial-form button:hover {
+            background-color: #e0b82d;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .visible {
+            opacity: 1;
+        }
+
         @media (max-width: 768px) {
             .service-item {
-                flex: 1 1 100%;
+                width: 100%;
             }
         }
-  </style>
- </head>
- <body>
-  <div class="header">
-   <h1>
-    Massage Iqbal Icikiwir
-   </h1>
-  </div>
-  <div class="hero fade-in">
-   <h2>
-    Relaxing Your Body And Pely
-   </h2>
-   <p>
-    Experience the best massage therapy ah and ih
-   </p>
-   <a class="btn" href="#">
-    Book Now
-   </a>
-  </div>
-  <div class="about fade-in">
-   <p>
-    We provide the best massage therapy services to help you relax and rejuvenate.
-   </p>
-  </div>
-  <div class="services">
-   <h2>
-    Our Services
-   </h2>
-   <div class="service-container">
-    <div class="service-item">
-     <img alt="Deep Tissue Massage" height="400" src="https://storage.googleapis.com/a1aa/image/OPxGbUvfA1VHLSOm4KKqnCboSm16hJkb0QsjGpMW6TnqRfrTA.jpg" width="600"/>
-     <h3>
-      Deep Tissue Massage
-     </h3>
-     <p>
-      Relieve muscle tension and improve circulation.
-     </p>
-     <div class="service-details">
-      <ul>
-       <li>
-        IDR 350K - 60 minutes
-       </li>
-       <li>
-        IDR 450K - 90 minutes
-       </li>
-       <li>
-        IDR 650K - 120 minutes
-       </li>
-      </ul>
-     </div>
-     <a class="btn" href="#">
-      Learn More
-     </a>
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Massage Iqbal Icikiwir</h1>
     </div>
-    <div class="service-item">
-     <img alt="Swedish Massage" height="400" src="https://storage.googleapis.com/a1aa/image/KrUHgC0VhJKZMRV6NEcZzIFes1wf6VXiMaSzqp6jN0VYjeXnA.jpg" width="600"/>
-     <h3>
-      Swedish Massage
-     </h3>
-     <p>
-      Relax and unwind with a gentle massage.
-     </p>
-     <div class="service-details">
-      <ul>
-       <li>
-        IDR 400K - 60 minutes
-       </li>
-       <li>
-        IDR 500K - 90 minutes
-       </li>
-       <li>
-        IDR 750K - 120 minutes
-       </li>
-      </ul>
-     </div>
-     <a class="btn" href="#">
-      Learn More
-     </a>
+    <div class="hero fade-in">
+        <h2>Relaxing Your Body And Mind</h2>
+        <p>Experience the best massage therapy</p>
+        <a class="btn" href="#">Book Now</a>
     </div>
-    <div class="service-item">
-     <img alt="Hot Stone Massage" height="400" src="https://storage.googleapis.com/a1aa/image/seGVdf2cPqg8HkaeoeMLdEJB2HL3h4Zh6MaqA8nsyOiFN6vOB.jpg" width="600"/>
-     <h3>
-      Hot Stone Massage
-     </h3>
-     <p>
-      Experience the soothing warmth of hot stones.
-     </p>
-     <div class="service-details">
-      <ul>
-       <li>
-        IDR 450K - 60 minutes
-       </li>
-       <li>
-        IDR 550K - 90 minutes
-       </li>
-       <li>
-        IDR 800K - 120 minutes
-       </li>
-      </ul>
-     </div>
-     <a class="btn" href="#">
-      Learn More
-     </a>
+    <div class="about fade-in">
+        <h2>About Us</h2>
+        <p>We provide the best massage therapy services to help you relax and rejuvenate.</p>
     </div>
-    <div class="service-item">
-     <img alt="Aromatherapy Massage" height="400" src="https://storage.googleapis.com/a1aa/image/ZHsZwqoQfevJkEeMdJo1NCD4drsfsh4gpLN9r4pm6hRTN6vOB.jpg" width="600"/>
-     <h3>
-      Aromatherapy Massage
-     </h3>
-     <p>
-      Relax with the healing power of essential oils.
-     </p>
-     <div class="service-details">
-      <ul>
-       <li>
-        IDR 450K - 60 minutes
-       </li>
-       <li>
-        IDR 550K - 90 minutes
-       </li>
-       <li>
-        IDR 800K - 120 minutes
-       </li>
-      </ul>
-     </div>
-     <a class="btn" href="#">
-      Learn More
-     </a>
-    </div>
-    <div class="service-item">
-     <img alt="Reflexology" height="400" src="https://storage.googleapis.com/a1aa/image/wQkd7Mh2huIfIyNNunJEWUH9flIDloFZyA8ehrRDWEJtG9XnA.jpg" width="600"/>
-     <h3>
-      Reflexology
-     </h3>
-     <p>
-      Improve your overall health with foot massage.
-     </p>
-     <div class="service-details">
-      <ul>
-       <li>
-        IDR 350K - 60 minutes
-       </li>
-       <li>
-        IDR 450K - 90 minutes
-       </li>
-       <li>
-        IDR 650K - 120 minutes
-       </li>
-      </ul>
-     </div>
-     <a class="btn" href="#">
-      Learn More
-     </a>
-    </div>
-    <div class="service-item">
-        <img alt="Reflexology" height="400" src="https://storage.googleapis.com/a1aa/image/YHej6nLd12VTLK0ubWTcfYztGtfmIcbgMppfVfVRnbqSa0f6E.jpg" width="600"/>
-        <h3>
-         Pijet +++
-        </h3>
-        <p>
-         Improve your overall health with foot massage.
-        </p>
-        <div class="service-details">
-         <ul>
-          <li>
-           IDR 350K - 60 minutes
-          </li>
-          <li>
-           IDR 450K - 90 minutes
-          </li>
-          <li>
-           IDR 650K - 120 minutes
-          </li>
-         </ul>
+    <div class="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="service-item">
+                <img src="https://storage.googleapis.com/a1aa/image/OhVXQ7caIMo7Hpo3992XQWpJSg48MgIP9nz279CfSCyqRA2JA.jpg" alt="Deep Tissue Massage" />
+                <h3>Deep Tissue Massage</h3>
+                <p>Relieve muscle tension and improve circulation.</p>
+                <div class="service-details">
+                    <ul>
+                        <li>IDR 350K - 60 minutes</li>
+                        <li>IDR 450K - 90 minutes</li>
+                        <li>IDR 650K - 120 minutes</li>
+                    </ul>
+                </div>
+                <a class="btn" href="#">Learn More</a>
+            </div>
+            <div class="service-item">
+                <img src="https://storage.googleapis.com/a1aa/image/7P1Pp0ueyyTAUS4SCW5PBlKpVxKl2JfCjJCle1tW4EHmGBYnA.jpg" alt="Swedish Massage" />
+                <h3>Swedish Massage</h3>
+                <p>Relax and unwind with a gentle massage.</p>
+                <div class="service-details">
+                    <ul>
+                        <li>IDR 400K - 60 minutes</li>
+                        <li>IDR 500K - 90 minutes</li>
+                        <li>IDR 750K - 120 minutes</li>
+                    </ul>
+                </div>
+                <a class="btn" href="#">Learn More</a>
+            </div>
+            <div class="service-item">
+                <img src="https://storage.googleapis.com/a1aa/image/OXY4mzDsfd1gNKZxSu3gEsZDwanFiI5WhVJhw1X3vpalRA2JA.jpg" alt="Hot Stone Massage" />
+                <h3>Hot Stone Massage</h3>
+                <p>Experience the soothing warmth of hot stones.</p>
+                <div class="service-details">
+                    <ul>
+                        <li>IDR 450K - 60 minutes</li>
+                        <li>IDR 550K - 90 minutes</li>
+                        <li>IDR 800K - 120 minutes</li>
+                    </ul>
+                </div>
+                <a class="btn" href="#">Learn More</a>
+            </div>
+            <div class="service-item">
+                <img src="https://storage.googleapis.com/a1aa/image/bixtd9AGpzZfFidk9TvJ4O2JXd0fkxL6A8XoHNfNXwDlGBYnA.jpg" alt="Aromatherapy Massage" />
+                <h3>Aromatherapy Massage</h3>
+                <p>Relax with the healing power of essential oils.</p>
+                <div class="service-details">
+                    <ul>
+                        <li>IDR 450K - 60 minutes</li>
+                        <li>IDR 550K - 90 minutes</li>
+                        <li>IDR 800K - 120 minutes</li>
+                    </ul>
+                </div>
+                <a class="btn" href="#">Learn More</a>
+            </div>
+            <div class="service-item">
+                <img src="https://storage.googleapis.com/a1aa/image/gFdAff8VkGhAHUl8nVU5O3nDsNrVra5UTqFewyYFWGvRGBYnA.jpg" alt="Reflexology" />
+                <h3>Reflexology</h3>
+                <p>Improve your overall health with foot massage.</p>
+                <div class="service-details">
+                    <ul>
+                        <li>IDR 350K - 60 minutes</li>
+                        <li>IDR 450K - 90 minutes</li>
+                        <li>IDR 650K - 120 minutes</li>
+                    </ul>
+                </div>
+                <a class="btn" href="#">Learn More</a>
+            </div>
+            <div class="service-item">
+                <img src="https://storage.googleapis.com/a1aa/image/TzZvmdqzkip6IxpnoVfZVeS4OxaF6vhXivj7MEEfpWCLGBYnA.jpg" alt="Pijet +++" />
+                <h3>Pijet +++</h3>
+                <p>Improve your overall health with foot massage.</p>
+                <div class="service-details">
+                    <ul>
+                        <li>IDR 350K - 60 minutes</li>
+                        <li>IDR 450K - 90 minutes</li>
+                        <li>IDR 650K - 120 minutes</li>
+                    </ul>
+                </div>
+                <a class="btn" href="#">Learn More</a>
+            </div>
         </div>
-        <a class="btn" href="#">
-         Learn More
-        </a>
-       </div>
-   </div>
-  </div>
-  <div class="testimonials fade-in">
-   <h2>
-    Testimonials
-   </h2>
-   <div class="testimonial-item">
-    <p>
-     "The best massage I've ever had! Highly recommend."
-    </p>
-    <p class="author">
-     - John Doe
-    </p>
-   </div>
-   <div class="testimonial-item">
-    <p>
-     "Amazing experience, very professional and relaxing."
-    </p>
-    <p class="author">
-     - Jane Smith
-    </p>
-   </div>
-  </div>
-  <div class="testimonial-form fade-in">
-   <h2>
-    Leave a Testimonial
-   </h2>
-   <form>
-    <input name="name" placeholder="Your Name" required="" type="text"/>
-    <textarea name="testimonial" placeholder="Your Testimonial" required=""></textarea>
-    <button type="submit">
-     Submit
-    </button>
-   </form>
-  </div>
-  <div class="gallery">
-   <h2>
-    Gallery
-   </h2>
-   <div class="gallery-item">
-    <img alt="Gallery Image 1" height="200" src="https://storage.googleapis.com/a1aa/image/YHej6nLd12VTLK0ubWTcfYztGtfmIcbgMppfVfVRnbqSa0f6E.jpg" width="300"/>
-   </div>
-   <div class="gallery-item">
-    <img alt="Gallery Image 2" height="200" src="https://storage.googleapis.com/a1aa/image/K6AeLeQ5HgjPnEUaIx6yk11lEM48OCub8LLU0EObKzkOjeXnA.jpg" width="300"/>
-   </div>
-   <div class="gallery-item">
-    <img alt="Gallery Image 3" height="200" src="https://storage.googleapis.com/a1aa/image/jNU7aDheAoR0WKejTtjxmqXxVhRldEQDGpKXhWuVZGzZjeXnA.jpg" width="300"/>
-   </div>
-   <div class="gallery-item">
-    <img alt="Gallery Image 4" height="200" src="https://storage.googleapis.com/a1aa/image/EIbXOegO6pRVDqbE0HuyIBPJfVukvyJgLXsCNX7NTFQPjeXnA.jpg" width="300"/>
-   </div>
-  </div>
-  <div class="contact">
-   <h2>
-    Contact Us
-   </h2>
-   <p>
-    123 Massage St, Relax City, CA 12345
-   </p>
-   <p>
-    (123) 456-7890
-   </p>
-   <div class="map" id="map">
-   </div>
-  </div>
-  <div class="footer">
-   <p>
-    © 2023 Massage Therapy. All rights reserved.
-   </p>
-  </div>
-  <script>
-   function initMap() {
+    </div>
+    <div class="testimonials fade-in">
+        <h2>Testimonials</h2>
+        <div class="testimonial-item active">
+            <p>"The best massage I've ever had! Highly recommend."</p>
+            <p class="author">- John Doe</p>
+        </div>
+        <div class="testimonial-item">
+            <p>"Amazing experience, very professional and relaxing."</p>
+            <p class="author">- Jane Smith</p>
+        </div>
+        <div class="testimonial-item">
+            <p>"I felt so relaxed and rejuvenated after the session."</p>
+            <p class="author">- Alice Johnson</p>
+        </div>
+        <div class="testimonial-item">
+            <p>"Highly skilled therapists and a very calming environment."</p>
+            <p class="author">- Michael Brown</p>
+        </div>
+    </div>
+    <div class="testimonial-form fade-in">
+        <h2>Leave a Testimonial</h2>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required />
+            <textarea name="testimonial" placeholder="Your Testimonial" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-item">
+            <img src="https://storage.googleapis.com/a1aa/image/gAd4LzZrSArnJNFLU7c8LzwmGafA0Yd0SvUVPWnCy9ZmRA2JA.jpg" alt="Gallery Image 1" />
+        </div>
+        <div class="gallery-item">
+            <img src="https://storage.googleapis.com/a1aa/image/eofwHazp7ar910pGvTF3J4JvZ6HXgl7YvuN5Mp0pfff2aEgdC.jpg" alt="Gallery Image 2" />
+        </div>
+        <div class="gallery-item">
+            <img src="https://storage.googleapis.com/a1aa/image/fdnUBrELDlXGfk7hOSdITFy9E3UX0q0rU5yUa8LZfnWdGBYnA.jpg" alt="Gallery Image 3" />
+        </div>
+        <div class="gallery-item">
+            <img src="https://storage.googleapis.com/a1aa/image/LpHUQbVtCOKfH63mmWNJ3ACsoUskQBYgQWhPlZSm0dCoRA2JA.jpg" alt="Gallery Image 4" />
+        </div>
+    </div>
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-box">
+            <p>123 Massage St, Relax City, CA 12345</p>
+            <p>(123) 456-7890</p>
+        </div>
+        <div class="map" id="map"></div>
+    </div>
+    <div class="footer">
+        <p>© 2023 Massage Therapy. All rights reserved.</p>
+    </div>
+    <script>
+        function initMap() {
             var mapOptions = {
                 center: new google.maps.LatLng(37.7749, -122.4194),
                 zoom: 10,
@@ -508,499 +486,31 @@
         }
 
         document.addEventListener("DOMContentLoaded", function() {
-        const fadeInElements = document.querySelectorAll('.fade-in');
+            const fadeInElements = document.querySelectorAll('.fade-in');
 
-        function checkVisibility() {
-            fadeInElements.forEach((el) => {
-                const rect = el.getBoundingClientRect();
-                // Mengecek apakah elemen berada dalam viewport
-                if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-                    el.classList.add('visible');
-                }
-            });
-        }
-
-        // Memeriksa visibilitas saat halaman dimuat
-        checkVisibility();
-
-        // Memeriksa visibilitas saat menggulir
-        window.addEventListener('scroll', checkVisibility);
-    });
-  </script>
-  <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&amp;callback=initMap">
-  </script>
- </body>
-</html>
-
-<!-- <html>
- <head>
-  <title>
-   Massage Therapy
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
-  <style>
-   :root {
-            --vanilla: #E4D5A3ff;
-            --black: #000000ff;
-            --sunglow: #FDCB31ff;
-            --jet: #333333ff;
-            --sandy-brown: #F8AE6Cff;
-            --lemon-chiffon: #FEF7D0ff;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--lemon-chiffon);
-        }
-        .header {
-            background-color: var(--jet);
-            color: var(--lemon-chiffon);
-            text-align: center;
-            padding: 20px;
-        }
-        .header h1 {
-            margin: 0;
-        }
-        .hero {
-            background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20231106/pngtree-wooden-texture-complementing-spa-objects-image_13789086.png');
-            background-size: cover;
-            background-position: center;
-            color: var(--lemon-chiffon);
-            text-align: center;
-            padding: 100px 20px;
-        }
-        .hero h2 {
-            font-size: 48px;
-            margin: 0;
-        }
-        .hero p {
-            font-size: 24px;
-            margin: 20px 0;
-        }
-        .hero .btn {
-            background-color: var(--sunglow);
-            color: var(--jet);
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 18px;
-        }
-        .about {
-            background-color: var(--vanilla);
-            color: var(--jet);
-            text-align: center;
-            padding: 50px 20px;
-        }
-        .about h2 {
-            font-size: 36px;
-            margin: 0 0 20px;
-        }
-        .about p {
-            font-size: 18px;
-            margin: 0;
-        }
-        .services {
-            background-color: var(--jet);
-            color: var(--lemon-chiffon);
-            text-align: center;
-            padding: 50px 20px;
-        }
-        .services h2 {
-            font-size: 36px;
-            margin: 0 0 20px;
-        }
-        .service-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .service-item {
-            background-color: var(--sandy-brown);
-            margin: 10px;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            flex: 1 1 calc(50% - 20px); /* Adjusts to fit 2 items per row */
-            box-sizing: border-box;
-        }
-        .service-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .service-item h3 {
-            font-size: 24px;
-            margin: 10px 0;
-        }
-        .service-item p {
-            font-size: 16px;
-            margin: 10px 0;
-        }
-        .service-item .service-details {
-            margin: 20px 0;
-        }
-        .service-item .service-details ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .service-item .service-details ul li {
-            font-weight: bold;
-            margin: 10px 0;
-        }
-        .service-item .btn {
-            background-color: var(--sunglow);
-            color: var(--jet);
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 18px;
-            margin-top: 20px;
-        }
-        .testimonials {
-            background-color: var(--lemon-chiffon);
-            color: var(--jet);
-            text-align: center;
-            padding: 50px 20px;
-        }
-        .testimonials h2 {
-            font-size: 36px;
-            margin: 0 0 20px;
-        }
-        .testimonial-item {
-            margin: 20px 0;
-        }
-        .testimonial-item p {
-            font-size: 18px;
-            margin: 0 0 10px;
-        }
-        .testimonial-item .author {
-            font-size: 16px;
-            font-weight: bold;
-        }
-        .contact {
-            background-color: var(--vanilla);
-            color: var(--jet);
-            text-align: center;
-            padding: 50px 20px;
-        }
-        .contact h2 {
-            font-size: 36px;
-            margin: 0 0 20px;
-        }
-        .contact p {
-            font-size: 18px;
-            margin: 0 0 20px;
-        }
-        .contact .map {
-            width: 100%;
-            height: 300px;
-            background-color: var(--jet);
-        }
-        .footer {
-            background-color: var(--jet);
-            color: var (--lemon-chiffon);
-            text-align: center;
-            padding: 20px;
-        }
-        .footer p {
-            margin: 0;
-        }
-        .gallery {
-            background-color: var(--lemon-chiffon);
-            color: var(--jet);
-            text-align: center;
-            padding: 50px 20px;
-        }
-        .gallery h2 {
-            font-size: 36px;
-            margin: 0 0 20px;
-        }
-        .gallery-item {
-            display: inline-block;
-            margin: 10px;
-        }
-        .gallery-item img {
-            width: 300px;
-            height: 200px;
-            border-radius: 10px;
-        }
-        .testimonial-form {
-            background-color: var(--lemon-chiffon);
-            color: var(--jet);
-            text-align: center;
-            padding: 50px 20px;
-        }
-        .testimonial-form h2 {
-            font-size: 36px;
-            margin: 0 0 20px;
-        }
-        .testimonial-form form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .testimonial-form input, .testimonial-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid var(--jet);
-            border-radius: 5px;
-        }
-        .testimonial-form button {
-            background-color: var(--sunglow);
-            color: var(--jet);
-            padding: 10px 20px;
-            border: none;
-            border-radius: 25px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-        @media (max-width: 768px) {
-            .service-item {
-                flex: 1 1 100%;
+            function checkVisibility() {
+                fadeInElements.forEach((el) => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                        el.classList.add('visible');
+                    }
+                });
             }
-        }
-  </style>
- </head>
- <body>
-  <div class="header">
-   <h1>
-    Massage Iqbal Icikiwir
-   </h1>
-  </div>
-  <div class="hero">
-   <h2>
-    Relaxing Your Body And Pely
-   </h2>
-   <p>
-    Experience the best massage therapy ah and ih
-   </p>
-   <a class="btn" href="#">
-    Book Now
-   </a>
-  </div>
-  <div class="about">
-   <h2>
-    About Us
-   </h2>
-   <p>
-    We provide the best massage therapy services to help you relax and rejuvenate.
-   </p>
-  </div>
-  <div class="services">
-   <h2>
-    Our Services
-   </h2>
-   <div class="service-container">
-    <div class="service-item">
-     <img alt="Deep Tissue Massage" height="400" src="https://storage.googleapis.com/a1aa/image/OPxGbUvfA1VHLSOm4KKqnCboSm16hJkb0QsjGpMW6TnqRfrTA.jpg" width="600"/>
-     <h3>
-      Deep Tissue Massage
-     </h3>
-     <p>
-      Relieve muscle tension and improve circulation.
-     </p>
-     <div class="service-details">
-      <ul>
-       <li>
-        IDR 350K - 60 minutes
-       </li>
-       <li>
-        IDR 450K - 90 minutes
-       </li>
-       <li>
-        IDR 650K - 120 minutes
-       </li>
-      </ul>
-     </div>
-     <a class="btn" href="#">
-      Learn More
-     </a>
-    </div>
-    <div class="service-item">
-     <img alt="Swedish Massage" height="400" src="https://storage.googleapis.com/a1aa/image/KrUHgC0VhJKZMRV6NEcZzIFes1wf6VXiMaSzqp6jN0VYjeXnA.jpg" width="600"/>
-     <h3>
-      Swedish Massage
-     </h3>
-     <p>
-      Relax and unwind with a gentle massage.
-     </p>
-     <div class="service-details">
-      <ul>
-       <li>
-        IDR 400K - 60 minutes
-       </li>
-       <li>
-        IDR 500K - 90 minutes
-       </li>
-       <li>
-        IDR 750K - 120 minutes
-       </li>
-      </ul>
-     </div>
-     <a class="btn" href="#">
-      Learn More
-     </a>
-    </div>
-    <div class="service-item">
-     <img alt="Hot Stone Massage" height="400" src="https://storage.googleapis.com/a1aa/image/seGVdf2cPqg8HkaeoeMLdEJB2HL3h4Zh6MaqA8nsyOiFN6vOB.jpg" width="600"/>
-     <h3>
-      Hot Stone Massage
-     </h3>
-     <p>
-      Experience the soothing warmth of hot stones.
-     </p>
-     <div class="service-details">
-      <ul>
-       <li>
-        IDR 450K - 60 minutes
-       </li>
-       <li>
-        IDR 550K - 90 minutes
-       </li>
-       <li>
-        IDR 800K - 120 minutes
-       </li>
-      </ul>
-     </div>
-     <a class="btn" href="#">
-      Learn More
-     </a>
-    </div>
-    <div class="service-item">
-     <img alt="Aromatherapy Massage" height="400" src="https://storage.googleapis.com/a1aa/image/ZHsZwqoQfevJkEeMdJo1NCD4drsfsh4gpLN9r4pm6hRTN6vOB.jpg" width="600"/>
-     <h3>
-      Aromatherapy Massage
-     </h3>
-     <p>
-      Relax with the healing power of essential oils.
-     </p>
-     <div class="service-details">
-      <ul>
-       <li>
-        IDR 450K - 60 minutes
-       </li>
-       <li>
-        IDR 550K - 90 minutes
-       </li>
-       <li>
-        IDR 800K - 120 minutes
-       </li>
-      </ul>
-     </div>
-     <a class="btn" href="#">
-      Learn More
-     </a>
-    </div>
-    <div class="service-item">
-     <img alt="Reflexology" height="400" src="https://storage.googleapis.com/a1aa/image/wQkd7Mh2huIfIyNNunJEWUH9flIDloFZyA8ehrRDWEJtG9XnA.jpg" width="600"/>
-     <h3>
-      Reflexology
-     </h3>
-     <p>
-      Improve your overall health with foot massage.
-     </p>
-     <div class="service-details">
-      <ul>
-       <li>
-        IDR 350K - 60 minutes
-       </li>
-       <li>
-        IDR 450K - 90 minutes
-       </li>
-       <li>
-        IDR 650K - 120 minutes
-       </li>
-      </ul>
-     </div>
-     <a class="btn" href="#">
-      Learn More
-     </a>
-    </div>
-   </div>
-  </div>
-  <div class="testimonials">
-   <h2>
-    Testimonials
-   </h2>
-   <div class="testimonial-item">
-    <p>
-     "The best massage I've ever had! Highly recommend."
-    </p>
-    <p class="author">
-     - John Doe
-    </p>
-   </div>
-   <div class="testimonial-item">
-    <p>
-     "Amazing experience, very professional and relaxing."
-    </p>
-    <p class="author">
-     - Jane Smith
-    </p>
-   </div>
-  </div>
-  <div class="testimonial-form">
-   <h2>
-    Leave a Testimonial
-   </h2>
-   <form>
-    <input name="name" placeholder="Your Name" required="" type="text"/>
-    <textarea name="testimonial" placeholder="Your Testimonial" required=""></textarea>
-    <button type="submit">
-     Submit
-    </button>
-   </form>
-  </div>
-  <div class="gallery">
-   <h2>
-    Gallery
-   </h2>
-   <div class="gallery-item">
-    <img alt="Gallery Image 1" height="200" src="https://storage.googleapis.com/a1aa/image/YHej6nLd12VTLK0ubWTcfYztGtfmIcbgMppfVfVRnbqSa0f6E.jpg" width="300"/>
-   </div>
-   <div class="gallery-item">
-    <img alt="Gallery Image 2" height="200" src="https://storage.googleapis.com/a1aa/image/K6AeLeQ5HgjPnEUaIx6yk11lEM48OCub8LLU0EObKzkOjeXnA.jpg" width="300"/>
-   </div>
-   <div class="gallery-item">
-    <img alt="Gallery Image 3" height="200" src="https://storage.googleapis.com/a1aa/image/jNU7aDheAoR0WKejTtjxmqXxVhRldEQDGpKXhWuVZGzZjeXnA.jpg" width="300"/>
-   </div>
-   <div class="gallery-item">
-    <img alt="Gallery Image 4" height="200" src="https://storage.googleapis.com/a1aa/image/EIbXOegO6pRVDqbE0HuyIBPJfVukvyJgLXsCNX7NTFQPjeXnA.jpg" width="300"/>
-   </div>
-  </div>
-  <div class="contact">
-   <h2>
-    Contact Us
-   </h2>
-   <p>
-    123 Massage St, Relax City, CA 12345
-   </p>
-   <p>
-    (123) 456-7890
-   </p>
-   <div class="map" id="map">
-   </div>
-  </div>
-  <div class="footer">
-   <p>
-    © 2023 Massage Therapy. All rights reserved.
-   </p>
-  </div>
-  <script>
-   function initMap() {
-            var mapOptions = {
-                center: new google.maps.LatLng(37.7749, -122.4194),
-                zoom: 10,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-        }
-  </script>
-  <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&amp;callback=initMap">
-  </script>
- </body>
-</html>
- -->
+
+            checkVisibility();
+            window.addEventListener('scroll', checkVisibility);
+
+            // Testimonial slider
+            const testimonials = document.querySelectorAll('.testimonial-item');
+            let currentIndex = 0;
+
+            function showNextTestimonial() {
+                testimonials[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % testimonials.length;
+                testimonials[currentIndex].classList.add('active');
+            }
+
+            setInterval(showNextTestimonial, 5000); // Change testimonial every 5 seconds
+        });
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=
